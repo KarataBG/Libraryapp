@@ -3,15 +3,10 @@ package com.example.libraryapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import com.google.android.material.navigation.NavigationView;
 
 public class StartMenu extends AppCompatActivity {
 
@@ -21,9 +16,11 @@ public class StartMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_menu);
 
+        //Изписва текущия потребител
         TextView textView = findViewById(R.id.textView3);
         textView.setText("Текущ потребител" + PreferenceManager.getID(this));
 
+        //Възлага бутоните, които придвижват сесията
         Button borrow = findViewById(R.id.borrow);
         borrow.setOnClickListener(v -> {
             Intent intent = new Intent(StartMenu.this, BorrowActivity.class);
@@ -40,13 +37,8 @@ public class StartMenu extends AppCompatActivity {
             startActivity(intent);
         });
 
-
         Button signOut = findViewById(R.id.sign_out);
-
-        signOut.setOnClickListener(v ->
-
-        {
-//            PreferenceManager.clearFreeToTakeBooks(this);
+        signOut.setOnClickListener(v -> {
             PreferenceManager.clearID(this);
             Intent intent = new Intent(StartMenu.this, MainActivity.class);
             startActivity(intent);

@@ -12,11 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PreferenceManager.setLineLength(this,50);
+
+        //Провеява дали файла книги съшествува, ако не го създава и/или запълва
         File books = new File(getFilesDir(), "books.txt");
         if (!books.exists()) {
             try {
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
             createBooksFile();
         }
 
+        //Проверява дали файловете потребители съществуват ако не ги създава
+        //Вижда файла с потребители, брои колко са и проверява толквоа на брой потребителски файлове
         try {
             int counter = 0;
             BufferedReader reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.users)));
@@ -43,12 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 counter++;
             }
 
-            Toast.makeText(this,String.valueOf(counter),Toast.LENGTH_SHORT).show();
-
             for (int i = 1; i <= counter; i++) {
                 File user = new File(getFilesDir(), "user" + i + ".txt");
-                Toast.makeText(this,"user" + counter + ".txt",Toast.LENGTH_SHORT).show();
-
                 if (!user.exists()) {
                     user.createNewFile();
                 }
@@ -58,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-
-        EditText usernameField = findViewById(R.id.editTextText);
-        EditText passwordField = findViewById(R.id.editTextText2);
+        EditText usernameField = findViewById(R.id.editTextUsername);
+        EditText passwordField = findViewById(R.id.editTextPassword);
         Button login = findViewById(R.id.button);
 
+        //Проверява дали са правлни username и passowrd ако да влиза ако не чака за нови
         login.setOnClickListener(v -> {
             String username = usernameField.getText().toString();
             String password = passwordField.getText().toString();
@@ -77,35 +77,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkCredentials(String username, String password) {
-        PreferenceManager.setID(this,1);
-        return true;
+        //Проверява като чете ред по ред рабира реда на парчета и сравнява полетата
+        // брои колко реда са минали от файла, което съответства на ид на потребителя
+        // Запазва го в клас PreferenceManager
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.users)));
+            String line;
+            int id = 1;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                String storedUsername = parts[0];
+                String storedPassword = parts[1];
 
-//        try {
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.users)));
-//            String line;
-//            int id = 0;
-//            while ((line = reader.readLine()) != null) {
-//                String[] parts = line.split(",");
-//                String storedUsername = parts[0];
-//                String storedPassword = parts[1];
-//
-//                id++;
-//                if (storedUsername.equals(username) && storedPassword.equals(password)) {
-//                    PreferenceManager.setID(this, id);
-//                    return true;
-//                }
-//            }
-//            reader.close();
-//
-//        } catch (IOException e) {
-//            Toast.makeText(getApplicationContext(),username +password,Toast.LENGTH_SHORT).show();
-//
-//            e.printStackTrace();
-//        }
-//        return false;
+                if (storedUsername.equals(username) && storedPassword.equals(password)) {
+                    PreferenceManager.setID(this, id);
+                    return true;
+                }
+                id++;
+
+            }
+            reader.close();
+
+        } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), username + password, Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private void createBooksFile() {
+        //Записва низа в създадения файл, което действа като база от данни за книгите
         try {
             String data = "001,To Kill a Mockingbird,Harper Lee,0,0,0\n" +
                     "002,1984,George Orwell,0,0,0\n" +
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             outputStreamWriter.write(data);
             outputStreamWriter.close();
         } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
+            e.printStackTrace();
         }
     }
 }
