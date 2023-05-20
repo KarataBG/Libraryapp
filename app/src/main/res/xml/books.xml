@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<BookList>
+    <Book>
+        <ID>001</ID>
+        <Name>To Kill a Mockingbird</Name>
+        <Author>Harper Lee</Author>
+        <UserID>0</UserID>
+        <IsTaken>0</IsTaken>
+        <DateTaken></DateTaken>
+    </Book>
+    <Book>
+        <ID>002</ID>
+        <Name>1984</Name>
+        <Author>George Orwell</Author>
+        <UserID>102</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-16</DateTaken>
+    </Book>
+    <Book>
+        <ID>003</ID>
+        <Name>Pride and Prejudice</Name>
+        <Author>Jane Austen</Author>
+        <UserID>0</UserID>
+        <IsTaken>0</IsTaken>
+        <DateTaken></DateTaken>
+    </Book>
+    <Book>
+        <ID>004</ID>
+        <Name>Animal Farm</Name>
+        <Author>George Orwell</Author>
+        <UserID>0</UserID>
+        <IsTaken>0</IsTaken>
+        <DateTaken></DateTaken>
+    </Book>
+    <Book>
+        <ID>005</ID>
+        <Name>The Great Gatsby</Name>
+        <Author>F. Scott Fitzgerald</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>006</ID>
+        <Name>6</Name>
+        <Author>6</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>7</ID>
+        <Name>7</Name>
+        <Author>7</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>8</ID>
+        <Name>8</Name>
+        <Author>8</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>9</ID>
+        <Name>9</Name>
+        <Author>9</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>10</ID>
+        <Name>10</Name>
+        <Author>10</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>11</ID>
+        <Name>11</Name>
+        <Author>11</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>12</ID>
+        <Name>12</Name>
+        <Author>12</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+    <Book>
+        <ID>13</ID>
+        <Name>13</Name>
+        <Author>13</Author>
+        <UserID>105</UserID>
+        <IsTaken>Yes</IsTaken>
+        <DateTaken>2023-04-18</DateTaken>
+    </Book>
+
+</BookList>

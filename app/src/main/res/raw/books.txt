@@ -1,0 +1,30 @@
+001,To Kill a Mockingbird,Harper Lee,0,0,0
+002,1984,George Orwell,102,1,2023-04-16
+003,Pride and Prejudice,Jane Austen,0,0,0
+004,The Great Gatsby,F.Scott Fitzgerald,104,1,2023-04-18
+005,To the Lighthouse,Virginia Woolf,105,1,2023-04-19
+006,Moby-Dick,Herman Melville,106,1,2023-04-20
+007,The Catcher in the Rye,J.D.Salinger,107,1,2023-04-21
+008,Jane Eyre,Charlotte Brontë,108,1,2023-04-22
+009,Brave New World,Aldous Huxley,109,1,2023-04-23
+010,The Lord of the Rings,J.R.R.Tolkien,110,1,2023-04-24
+011,Harry Potter and the Sorcerer's Stone,J.K.Rowling,111,1,2023-04-25
+012,The Hobbit,J.R.R.Tolkien,112,1,2023-04-26
+013,Frankenstein,Mary Shelley,113,1,2023-04-27
+014,Crime and Punishment,Fyodor Dostoevsky,114,1,2023-04-28
+015,The Odyssey,Homer,115,1,2023-04-29
+016,The Picture of Dorian Gray,Oscar Wilde,116,1,2023-04-30
+017,The Adventures of Huckleberry Finn,Mark Twain,117,1,2023-05-01
+018,The Scarlet Letter,Nathaniel Hawthorne,118,1,2023-05-02
+019,Wuthering Heights,Emily Brontë,119,1,2023-05-03
+020,The Count of Monte Cristo,Alexandre Dumas,120,1,2023-05-04
+021,The Alchemist,Paulo Coelho,121,1,2023-05-05
+022,One Hundred Years of Solitude,Gabriel García Márquez,122,1,2023-05-06
+023,The Kite Runner,Khaled Hosseini,123,1,2023-05-07
+024,The Hobbit,J.R.R. Tolkien,124,1,2023-05-08
+025,The Brothers Karamazov,Fyodor Dostoevsky,125,1,2023-05-09
+026,Anna Karenina,Leo Tolstoy,126,1,2023-05-10
+027,The Book Thief,Markus Zusak,127,1,2023-05-11
+028,The Shining,Stephen King,128,1,2023-05-12
+029,The Hunger Games,Suzanne Collins,129,1,2023-05-13
+030,The Chronicles of Narnia,C.S. Lewis,130,1,2023-05-14
